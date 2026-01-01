@@ -12,15 +12,9 @@ app.post('/run', async (req, res) => {
     console.log("Received:", origin, destination);
 
     const browser = await puppeteer.launch({
-        headless: "new", // or true
-        args: [
-            "--no-sandbox",
-            "--disable-setuid-sandbox",
-            "--disable-dev-shm-usage",
-            "--disable-gpu"
-        ],
-        defaultViewport: null,
-    });
+  headless: "new",
+  args: ["--no-sandbox", "--disable-setuid-sandbox"],
+});
 
     const page = await browser.newPage();
 
